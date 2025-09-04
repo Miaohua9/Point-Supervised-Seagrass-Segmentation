@@ -56,7 +56,7 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Miaohua Zhang, Ali Cheraghian, Yi Qin, David Benn, Therese Rollan, and Nariman Habili</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Miaohua Zhang, Rodrigo Santa Cruz, Yulia Arzhaeva, Xun Li, Brendan Do, Jeremy Oorloff, Mohammad Ali Armin, Zeeshan Hayder, David Ahmedt-Aristizabal</a><sup>*</sup>,</span>
                   </span>
                   </div>
 
@@ -106,12 +106,10 @@
 
     <div class="content">
       <figure>
-        <img src="static/images/work_flow.png" alt="TOA Radiance Visualization">
+        <img src="static/images/framework1.png" alt="TOA Radiance Visualization">
         <figcaption class="has-text-centered">
-          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
-allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
-a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
-UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various applications.
+          <strong>Figure 1:</strong> An overview of the point-supervised seagrass segmentation and the 3D habitat mapping. Seagrass masks for 2D and
+3D segmentation are represented in green.
         </figcaption>
       </figure>
 
@@ -128,7 +126,15 @@ UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the ed
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper introduces an innovative deep learning-based solution for atmospheric correction in remote sensing, specifically designed for resource-constrained spaceborne systems. We train the UNet deep learning model with 3D kernels on a synthetic dataset derived from Hyperion imagery over Australia and then utilize knowledge distillation to develop a lightweight model that maintains accuracy while minimizing computational demands. The lightweight model undergoes static quantization and is then deployed on the Raspberry Pi 4 platform. The Raspberry Pi 4 is known for its computational efficiency and aligns with spaceborne computational constraints, offering a practical solution for onboard processing. Major contributions include utilizing available remote sensing data and a physics-based method to create an extensive synthetic dataset resembling typical atmospheric conditions and geographic terrains, as well as outlining an AI processing workflow encompassing synthetic dataset generation, optimal model training, knowledge distillation for lightweight model training, and model compression through static quantization for resource-constrained environments. The results demonstrate the successful deployment of atmospheric correction on the Raspberry Pi 4.
+            Underwater imagery is often used in marine monitoring, for example in seagrass habitat mapping applications. It facilitates the collection of vital observations such as coverage estimation, species detection and recognition across diverse spatial
+scales. Analysing these images often relies on fully supervised segmentation methods, necessitating labour-intensive pixel-wise mask annotations and resulting in significant expert labelling
+costs. While previous efforts have explored weak supervision with point annotation, their focus has predominantly been on coarse seagrass segmentation, often limited to segmenting patches. This
+emphasis has overlooked the aspects of fine-grained segmentation and multi-dimensional mapping essential for seagrass habitat characterisation. In this paper, we propose a label-efficient finegrained seagrass segmentation approach based on weak supervision with sparse point annotations, coupled with photogrammetric technology for underwater large-scale 3D habitat mapping.
+Our point-based supervision method, utilises 2D images to guide the segmentation process. We generate 3D mesh models and orthoimages of the seagrass habitat from collected underwater data.
+Subsequently, we map the semantic information directly into 3D space using a 2D-3D rasterisation-based approach and through a patch-based orthomosaic segmentation technique. The proposed
+approach is evaluated on the benchmark camouflaged object detection dataset, showing promising results in point-supervised segmentation. Additionally, it provides qualitative results in 2D
+segmentation, 3D seagrass mapping, and orthomosaic generation. Our approach offers a straightforward method to characterise seagrass habitats at a large scale, contributing to the advancement
+of marine conservation efforts.
           </p>
         </div>
       </div>
@@ -144,12 +150,9 @@ UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the ed
 
     <div class="content">
       <figure>
-        <img src="static/images/TOA.png" alt="TOA Radiance Visualization">
+        <img src="static/images/Point_seagrass.png" alt="2D seagrass segmentation">
         <figcaption class="has-text-centered">
-          <strong>Figure 1:</strong> Satellite images or images captured from sensors are important for monitoring environmental changes, land cover classification. These images represent the reflectance from the earth surface, which is key to understanding various surface patterns.
-However, as the light travels from the sun to the Earth's surface and then reflects back up to the satellite or airborne sensor, it passes through the atmosphere. During this journey, the light can be scattered or absorbed by atmospheric particles, leading to distortions in the captured data. These atmospheric effects can significantly alter the true reflectance values of the surface, it makes  the raw data less reliable for analysis.
-Atmospheric correction is a process applied to this raw data to remove or minimize these distortions, so that we can obtain more accurate surface reflectance values.  To ensue that the captured data is reliable for applications. 
-Since the atmospheric correction needs to be performed on satellites or sensors with limited computational resources. So there is a need to develop lightweight models with fewer parameters that can be efficiently applied on these devices.  
+          <strong>Figure 1:</strong>  Overview of the proposed point-supervised image segmentation framework 
         </figcaption>
       </figure>
 
@@ -161,31 +164,48 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
 <!-- Table Results Carousel -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <h2 class="title is-3 has-text-centered">3D seagrass mapping</h2>
     <div id="table-carousel" class="carousel results-carousel">
 
       <!-- Table 1 -->
       <div class="item has-text-centered">
-        <img src="static/images/table1.png" alt="Performance Table 1"
+        <img src="static/images/mapping2D_3D.png" alt="Performance Table 1"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Table 1:</strong> Experimental results using different methods.
+          <strong>Table 1:</strong> 2D-3D mapping and orthomosaic projection.
         </h2>
       </div>
 
       <!-- Table 2 -->
       <div class="item has-text-centered">
-        <img src="static/images/table2.png" alt="Performance Table 2"
+        <img src="static/images/patch_seg.png" alt="Performance Table 2"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Table 2:</strong> Experimental results of different methods on the RPi4.
+          <strong>Table 2:</strong> Diagram of the patch-based orthomosaic segmentation approach.
         </h2>
       </div>
 
     </div>
   </div>
 </section>
+  
+<!-- Result Images with Captions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">quantitive</h2>
 
+    <div class="content">
+      <figure>
+        <img src="static/images/table_public.png" alt="2D seagrass segmentation">
+        <figcaption class="has-text-centered">
+          <strong>Figure 1:</strong>  Performance comparison with the public available CHAMELEON, CAMO, and COD10K datasets.
+        </figcaption>
+      </figure>
+
+      <!-- Add more figures here as needed -->
+    </div>
+  </div>
+</section>
 
 <!-- Visual Results Carousel -->
 <section class="section">
@@ -195,19 +215,19 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
 
       <!-- Visual 1 -->
       <div class="item has-text-centered">
-        <img src="static/images/exp_1.png" alt="Visual Result 1"
+        <img src="static/images/public_visual.png" alt="Visual Result 1"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Figure 1:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land and water surface.
+          <strong>Figure 1:</strong> Qualitative comparison of existing methods and the proposed approach on the camouflaged public dataset.
         </h2>
       </div>
 
       <!-- Visual 2 -->
       <div class="item has-text-centered">
-        <img src="static/images/exp_2.png" alt="Visual Result 2"
+        <img src="static/images/seagrass_visual" alt="Visual Result 2"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Figure 2:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land surface.
+          <strong>Figure 2:</strong> Segmentation masks on the “Indo” seagrass dataset using SegFormer, SAM-Adapter, and our method.
         </h2>
       </div>
 
