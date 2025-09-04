@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,28 +52,23 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Miaohua Zhang, Ali Cheraghian, Yi Qin, David Benn, Therese Rollan, and Nariman Habili</a><sup>*</sup>,</span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Data61, CSIRO<br>DICTA2024, Perth, Australia</span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://ieeexplore.ieee.org/document/10869604" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -84,34 +79,15 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://publications.csiro.au/publications/publication/PIcsiro:EP2024-3066/RI10/RT19" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>CSIRO</span>
                     </a>
                   </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
                 </a>
               </span>
             </div>
@@ -123,23 +99,27 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
+ <!-- Result Images with Captions -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+    <h2 class="title is-3 has-text-centered"></h2>
+
+    <div class="content">
+      <figure>
+        <img src="static/images/work_flow.png" alt="TOA Radiance Visualization">
+        <figcaption class="has-text-centered">
+          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
+allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
+a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
+UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various applications.
+        </figcaption>
+      </figure>
+
+      <!-- Add more figures here as needed -->
     </div>
   </div>
 </section>
-<!-- End teaser video -->
-
+  
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -148,7 +128,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            This paper introduces an innovative deep learning-based solution for atmospheric correction in remote sensing, specifically designed for resource-constrained spaceborne systems. We train the UNet deep learning model with 3D kernels on a synthetic dataset derived from Hyperion imagery over Australia and then utilize knowledge distillation to develop a lightweight model that maintains accuracy while minimizing computational demands. The lightweight model undergoes static quantization and is then deployed on the Raspberry Pi 4 platform. The Raspberry Pi 4 is known for its computational efficiency and aligns with spaceborne computational constraints, offering a practical solution for onboard processing. Major contributions include utilizing available remote sensing data and a physics-based method to create an extensive synthetic dataset resembling typical atmospheric conditions and geographic terrains, as well as outlining an AI processing workflow encompassing synthetic dataset generation, optimal model training, knowledge distillation for lightweight model training, and model compression through static quantization for resource-constrained environments. The results demonstrate the successful deployment of atmospheric correction on the Raspberry Pi 4.
           </p>
         </div>
       </div>
@@ -157,128 +137,116 @@
 </section>
 <!-- End paper abstract -->
 
+ <!-- Result Images with Captions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Problems</h2>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
+    <div class="content">
+      <figure>
+        <img src="static/images/TOA.png" alt="TOA Radiance Visualization">
+        <figcaption class="has-text-centered">
+          <strong>Figure 1:</strong> Satellite images or images captured from sensors are important for monitoring environmental changes, land cover classification. These images represent the reflectance from the earth surface, which is key to understanding various surface patterns.
+However, as the light travels from the sun to the Earth's surface and then reflects back up to the satellite or airborne sensor, it passes through the atmosphere. During this journey, the light can be scattered or absorbed by atmospheric particles, leading to distortions in the captured data. These atmospheric effects can significantly alter the true reflectance values of the surface, it makes  the raw data less reliable for analysis.
+Atmospheric correction is a process applied to this raw data to remove or minimize these distortions, so that we can obtain more accurate surface reflectance values.  To ensue that the captured data is reliable for applications. 
+Since the atmospheric correction needs to be performed on satellites or sensors with limited computational resources. So there is a need to develop lightweight models with fewer parameters that can be efficiently applied on these devices.  
+        </figcaption>
+      </figure>
+
+      <!-- Add more figures here as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Table Results Carousel -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <div id="table-carousel" class="carousel results-carousel">
+
+      <!-- Table 1 -->
+      <div class="item has-text-centered">
+        <img src="static/images/table1.png" alt="Performance Table 1"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Table 1:</strong> Experimental results using different methods.
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
+
+      <!-- Table 2 -->
+      <div class="item has-text-centered">
+        <img src="static/images/table2.png" alt="Performance Table 2"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Table 2:</strong> Experimental results of different methods on the RPi4.
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Visual Results Carousel -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Visualizations</h2>
+    <div id="visual-carousel" class="carousel results-carousel">
+
+      <!-- Visual 1 -->
+      <div class="item has-text-centered">
+        <img src="static/images/exp_1.png" alt="Visual Result 1"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 1:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land and water surface.
+        </h2>
+      </div>
+
+      <!-- Visual 2 -->
+      <div class="item has-text-centered">
+        <img src="static/images/exp_2.png" alt="Visual Result 2"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 2:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land surface.
+        </h2>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/images/AC_project.mp4"
+        type="video/mp4">
+      </video>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        International Conference on Digital Image Computing: Techniques and Applications (DICTA 2024) Nov 27-29, 2024, Perth, Australia” 
       </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+<!-- End teaser video -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@inproceedings{zhang2024efficient,
+  title={Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression},
+  author={Zhang, Miaohua and Cheraghian, Ali and Qin, Yi and Benn, David and Rollan, Therese and Habili, Nariman},
+  booktitle={2024 International Conference on Digital Image Computing: Techniques and Applications (DICTA)},
+  pages={632--639},
+  year={2024},
+  organization={IEEE}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
